@@ -1,5 +1,4 @@
-FILE_SUMMARIES — Deep, non-actionable per-file summaries
-
+FILE_SUMMARIES 
 Warning: These summaries intentionally omit executable details, assembly listings, decoding algorithms, and any operational steps. They describe intent, inputs/outputs, complexity, and safe refactor/testing suggestions only.
 
 Top-level
@@ -86,10 +85,3 @@ FastIo.c
 - Complexity: High and security-sensitive.
 - Refactor/Test: Document intended interception semantics and expected invariants; unit-testing must be emulated at a model level without executing in kernel context.
 
-General refactor & documentation suggestions (safe)
-- Add detailed per-file provenance headers (sample origin, extraction date, confidence level).
-- Where possible, replace opaque constants with named descriptors and provide an English-language description of each transformation step.
-- Create a documentation-only branch containing: `ARCHITECTURE.md`, `FILE_NOTES.md`, `FILE_SUMMARIES.md`, `DETAILED_STATIC_REPORT.md`, and `NOTICE.md` — no sensitive implementation changes.
-- Add CI guards to skip building `dropper/` and `rootkit/` by default and run only static linters and documentation checks.
-
-If you want a single-file deep paragraph for a specific file now (e.g., `dropper/4. Encoding.c`), name that file and I will produce one focused paragraph describing intent, inputs, outputs, complexity, and safe improvement suggestions (no code, no algorithm steps).
