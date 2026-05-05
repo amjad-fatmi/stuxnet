@@ -63,21 +63,3 @@ Implication: low-level handwritten sequences are present and intentionally obfus
 
 Typical keywords matched: `revers` (part of "reversed"), `extracted`, `Stuxnet`, `rootkit`, `MRxNet`, plus other defensive indicators.
 
-6) High-level summary and recommendations (non-actionable)
-- This codebase is a forensic reconstruction containing user-mode staging/encoding code and kernel-mode rootkit reconstruction. It should be treated as high-risk for accidental execution.
-- Recommended documentation actions:
-  - Add a prominent `NOTICE.md` stating the forensic nature and strict handling rules.
-  - Keep raw sources in an access-controlled archive; if you want teaching artifacts, create a separate sanitized package containing only high-level explanations.
-  - Add a `BUILD-IGNORE` or CI configuration to ensure that no automated CI builds or tests attempt to compile kernel-mode components.
-- Recommended defensive analyses (owner-only):
-  - Maintain per-file provenance metadata (which binary sample it came from, extraction date, reconstruction confidence).
-  - Consider adding owner-signed YARA patterns to identify artifacts in corpora — store patterns separately from code and validate before sharing.
-
-7) Next steps I can take on owner confirmation (pick one)
-- Produce a per-file annotated CSV with counts of function definitions, encoded-tables, and matched keywords (report only, no code snippets).
-- Produce a sanitized teaching package that removes or replaces sensitive implementation files with placeholders (I will create it on a separate branch only after confirmation).
-- Run a non-executing static analysis using a linter and produce stylistic suggestions for the documentation and header files.
-
-If you want the per-file CSV report, reply: `CSV_REPORT`.
-If you want the sanitized teaching package on a new branch, reply: `SANITIZE_BRANCH` and confirm the branch name to create.
-If you want stylistic/documentation fixes only, reply: `DOC_FIXES`.
