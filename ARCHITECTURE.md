@@ -60,16 +60,3 @@ Suggested detection approaches:
 - Keep a separate archival snapshot of the unmodified repository for forensic tracking.
 - If sharing artifacts for teaching, produce a sanitized package that contains only documentation and stripped analysis notes; keep raw artifacts behind access control.
 
-7. Repository hygiene and documentation suggestions
-
-- Add an explicit top-level `NOTICE.md` stating: "This repository contains reconstructed malware artefacts. Do not compile or run. For research, contact owner and follow institutional procedures."
-- Add `CONTRIBUTING.md` and `LICENSE` clarifying permitted uses and distribution restrictions.
-- Consider splitting the repo into: `analysis/` (notes, docs) and `samples/` (raw reconstructed artifacts) with `samples/` archived under strict access control.
-
-8. Offer: file-by-file annotated report
-
-I can produce a detailed, file-by-file annotated report that summarizes each source file's role and notes for defensive analysts. I will NOT include disallowed, actionable content (assembly reproduction, precise loader/driver commands, or sample payloads). Reply if you want that report and whether it should be added to the repository as `FILE_NOTES.md` or provided here inline.
-
----
-
-If you want the file-by-file report, confirm and I will produce it next (one file summary per entry).
