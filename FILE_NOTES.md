@@ -51,14 +51,3 @@ General notes and triage guidance
 - Sensitivity: The most sensitive files are the encoding/decoding modules, assembly blocks, and kernel-mode sources. All contain functionality that can materially change system state if compiled and executed.
 
 - Forensic use: If you intend others to examine this repository, add clear access controls and a top-level `NOTICE` or `HANDLING.md` that specifies: "Do not compile or run. For accredited research contact owner."
-
-- Static triage suggestions (non-actionable):
-  - Produce per-file metadata comments describing provenance (which binary sample, extraction date, limitations of reconstruction).
-  - Tag files that are partial reconstructions with a header note: "Partial reconstruction — may be incomplete or altered."
-  - Add a `FILE_NOTES.md` (this file) and include safe pointers for defensive analysts (e.g., YARA patterns for detection — owner-supplied only).
-
-- Next steps I can take (owner choice):
-  - Produce a sanitized teaching copy that removes or redacts sensitive implementation files (I previously created one but removed it at owner request). I will only proceed after explicit owner confirmation.
-  - Produce a deeper static analysis report that highlights suspicious strings, exported symbols, and structural call graph notes — the report will not include exploit, shellcode, or step-by-step payload reconstruction.
-
-If you want the deeper static analysis report, confirm and I'll produce it. If you want changes committed to the repo (documentation-only), tell me which files to add or update and I'll prepare a branch and show diffs before committing.
